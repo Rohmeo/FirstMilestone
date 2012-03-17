@@ -7,7 +7,7 @@ main()
 	int Result[9];
 	int i,j;
 	
-	for(i=1;i<= 9;++i)
+	for(i=1;i<=9;++i)
 	{
 	        Matrix1[i]=i;
 		Matrix2[i]=i;
@@ -24,21 +24,11 @@ main()
 	
 	for(j=1;j<=3;++j)
 		printf("%d\t",Result[j]);
-
 	printf("\n");
 	for(j=4;j<=6;++j)
 		printf("%d\t",Result[j]);
-
 	printf("\n");
-	printf("%d\t%d\t%d\n",Matrix1[1],Matrix1[2],Matrix1[3]);
-	printf("%d\t%d\t%d\n",Matrix1[4],Matrix1[5],Matrix1[6]);
-	printf("%d\t%d\t%d\n",Matrix1[7],Matrix1[8],Matrix1[9]);
-
-	printf("%d\t%d\t%d\n",Matrix2[1],Matrix2[2],Matrix2[3]);
-	printf("%d\t%d\t%d\n",Matrix2[4],Matrix2[5],Matrix2[6]);
-	printf("%d\t%d\t%d\n",Matrix2[7],Matrix2[8],Matrix2[9]);
-	/*	for(j=7;j<=9;++j);
+        for(j=7;j<=9;++j)
 		printf("%d\t",Result[j]);
-	*/
 	printf("\n");
 }
