@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <time.h>
+#include <sys/time.h>
 
 int matrixProduct(int Matrix1[3][3], int Matrix2[3][3], int row, int col);
 
@@ -9,7 +10,7 @@ main()
 	int Matrix2[3][3];
 	int Result[3][3];
 	int i,j;
-	clock_t time1, time2;
+	struct timeval start, end;
 	
 	for(i=0;i<=2;i++)
 	{
@@ -19,7 +20,7 @@ main()
 			Matrix2[i][j]=i*j;
 		}
 	}
-	time1 = clock();
+	gettimeofday(&start,NULL);
 	for(i=0;i<=2;i++)
 	{
 		for(j=0;j<=2;j++)
@@ -27,7 +28,7 @@ main()
 		Result[i][j]=matrixProduct(Matrix1,Matrix2,i,j);
 		}
 	}
-	time2 = clock();
+	gettimeofday(&end,NULL);
 	printf("Matrix 1:\n");
 	for(i=0;i<=2;i++)
 	{
@@ -49,7 +50,7 @@ main()
 				printf("%d\t",Matrix2[i][j]);
 			printf("\n");
 		}
-	printf("Elapsed Time:%d\n",time2-time1);
+	printf("Elapsed Time: %d \n",/*((end.tv_sec-start.tv_sec)*1000000)+*/(end.tv_usec-start.tv_usec));
 }
 
 int matrixProduct(int Matrix1[3][3], int Matrix2[3][3],int row, int col)
