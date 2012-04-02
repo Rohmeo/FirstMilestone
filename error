@@ -1,0 +1,18 @@
+ThreadedMatrixMultiplyAlt.c:11: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘void’
+ThreadedMatrixMultiplyAlt.c: In function ‘main’:
+ThreadedMatrixMultiplyAlt.c:23: error: ‘dim3’ undeclared (first use in this function)
+ThreadedMatrixMultiplyAlt.c:23: error: (Each undeclared identifier is reported only once
+ThreadedMatrixMultiplyAlt.c:23: error: for each function it appears in.)
+ThreadedMatrixMultiplyAlt.c:23: error: expected ‘;’ before ‘blockSize’
+ThreadedMatrixMultiplyAlt.c:24: error: expected ‘;’ before ‘gridSize’
+ThreadedMatrixMultiplyAlt.c:34: error: subscripted value is neither array nor pointer
+ThreadedMatrixMultiplyAlt.c:35: error: subscripted value is neither array nor pointer
+ThreadedMatrixMultiplyAlt.c:44: error: ‘size’ undeclared (first use in this function)
+ThreadedMatrixMultiplyAlt.c:45: error: ‘cudaMemcpyHostToDevice’ undeclared (first use in this function)
+ThreadedMatrixMultiplyAlt.c:56: error: ‘matrixProduct’ undeclared (first use in this function)
+ThreadedMatrixMultiplyAlt.c:56: error: expected expression before ‘<’ token
+ThreadedMatrixMultiplyAlt.c:63: error: subscripted value is neither array nor pointer
+ThreadedMatrixMultiplyAlt.c:70: error: subscripted value is neither array nor pointer
+ThreadedMatrixMultiplyAlt.c:77: error: subscripted value is neither array nor pointer
+ThreadedMatrixMultiplyAlt.c: At top level:
+ThreadedMatrixMultiplyAlt.c:83: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘void’
