@@ -2,12 +2,19 @@
 #include <time.h>
 #include <sys/time.h>
 
-int matrixProduct(int Matrix1[3][3], int Matrix2[3][3], int row, int col);
+
+typedef struct{
+	int width
+	int height
+	int* elements;
+} Matrix;
+
+int matrixProduct(Matrix Matrix1, Matrix Matrix2, int row, int col);
 
 main()
 {
-	int Matrix1[3][3];
-	int Matrix2[3][3];
+	Matrix Matrix1;
+	Matrix Matrix2;
 	int Result[3][3];
 	int i,j;
 	struct timeval start, end;
