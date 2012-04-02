@@ -3,7 +3,7 @@
 #include <sys/time.h>
 
 
-__global__ void matrixProduct(int Matrix1[MatSize][MatSize], int Matrix2[MatSize][MatSize]);
+__global__ void matrixProduct(int *Mat1[MatSize][MatSize], int *Mat2[MatSize][MatSize], int *Res[MatSize][MatSize]);
 {
 	int row = threadIdx.x;
 	int col = threadIdx.y;
@@ -11,9 +11,9 @@ __global__ void matrixProduct(int Matrix1[MatSize][MatSize], int Matrix2[MatSize
 	sum=0;
 	for(k=0;k<=MatSize;k++)
 	{
-		sum=sum+(Matrix1[row][k]*Matrix2[k][col]);
+		sum=sum+(Mat1[row][k]*Mat2[k][col]);
 	}
-	Result[row][col]=sum;
+	Res[row][col]=sum;
 }
 
 
@@ -21,14 +21,16 @@ __global__ void matrixProduct(int Matrix1[MatSize][MatSize], int Matrix2[MatSize
 main()
 {
 	//Declare vars, constants
-	int const MatSize=10; 			//Actual dimension is 1+MatSize
+	int const MatSize; 			
 	int Matrix1[MatSize][MatSize];
 	int Matrix2[MatSize][MatSize];
 	int Result[MatSize][MatSize];
 	int i,j;
+	int *dev_Matrix1[MatSize][MatSize];
 	struct timeval start, end;
 
 	//Initialize matrices with random values
+	MatSize = 10;
 	for(i=0;i<=MatSize;i++)
 	{
 		for(j=0;j<=MatSize;j++)
@@ -41,6 +43,7 @@ main()
 	
 	//Transfer matrices to device memory
 	size_t memSize = MatSize * MatSize * sizeof(int);
+	
 	
 	__loadToShared
 	//Kernel Declaration
