@@ -3,7 +3,7 @@
 
 
 __global__ void VecAdd(int *Vec1, int *Vec2, int *Res){
-	Res[threadIdx.x]=Vec1[threadIdx.x]+Vec2[threadIdx.x];
+	Res[blockIdx.x]=Vec2[blockIdx.x]+Vec2[blockIdx.x];
 }
 
 int main(){
@@ -38,5 +38,11 @@ int main(){
 		printf("%d\t",Result[i]);
 	}
 	printf("\n");
+	free(Vector1);
+	free(Vector2);
+	free(Result);
+	cudaFree(dev_Vector1);
+	cudaFree(dev_Vector2);
+	cudaFree(dev_Result);
 	return 0;
 }
